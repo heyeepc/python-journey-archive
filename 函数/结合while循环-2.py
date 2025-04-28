@@ -29,3 +29,6 @@ while True:
 print("\n录入的图书信息有：")
 for book in library:
     print(book)
+
+#如果用户输入 "no"，就让 publication_year = None
+#在 make_book 函数里，用 if publication_year: 判断有没有年份
