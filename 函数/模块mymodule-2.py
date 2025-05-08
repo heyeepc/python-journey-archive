@@ -1,6 +1,6 @@
 # main.py
 
-import 模块 mymodule-1
+import 模块mymodule-1
 
 mymodule.greet("小明")
 result = mymodule.add(3, 5)
