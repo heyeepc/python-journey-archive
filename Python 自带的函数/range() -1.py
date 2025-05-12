@@ -24,3 +24,8 @@ for i in range(2, 6):
 # 3
 # 4
 # 5
+
+r1 = range(int(input("请输入数字")))
+print(list(r1))
+for r2 in r1:
+    print(r2)
