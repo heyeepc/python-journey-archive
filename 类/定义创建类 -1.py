@@ -5,3 +5,5 @@ class Book:
 
     def describe(self):
         print(f'书名：{self.title}，作者：{self.author}')
+b1 = Book("红楼梦", "曹雪芹")
+b1.describe()
