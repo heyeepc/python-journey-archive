@@ -6,3 +6,9 @@ class Book:
 
     def describe(self):
         print(f'书名：{self.title}\n作者：{self.author}\n出版年份：{self.year}')
+
+book1 = Book()
+book1.describe()
+
+book2 = Book("三体", "刘慈欣")
+book2.describe()
