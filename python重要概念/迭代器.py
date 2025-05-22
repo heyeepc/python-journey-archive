@@ -14,3 +14,6 @@ class CountDownIterator:
         value = self.current
         self.current -= 1
         return value
+
+for i in CountDown(5):
+    print(i)
