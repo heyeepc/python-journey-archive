@@ -17,3 +17,11 @@ class CountDownIterator:
 
 for i in CountDown(5):
     print(i)
+
+#Iterable（可迭代）:
+#    - 可以用 for ... in ...
+#   - 有 __iter__()
+#
+#Iterator（迭代器）:
+#    - 有 __next__()
+#    - 每次调用返回一个元素
