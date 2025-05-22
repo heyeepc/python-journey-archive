@@ -25,3 +25,4 @@ for i in CountDown(5):
 #Iterator（迭代器）:
 #    - 有 __next__()
 #    - 每次调用返回一个元素
+
