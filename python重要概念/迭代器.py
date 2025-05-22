@@ -26,3 +26,8 @@ for i in CountDown(5):
 #    - 有 __next__()
 #    - 每次调用返回一个元素
 
+my_list = [1, 2, 3]
+iterator = iter(my_list)  # 获取迭代器
+print(next(iterator))  # 输出 1
+print(next(iterator))  # 输出 2
+print(next(iterator))  # 输出 3
