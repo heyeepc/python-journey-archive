@@ -14,6 +14,6 @@ non_existent_path = 'non_existent_folder'
 print(f"'{non_existent_path}' 是一个目录吗？ {os.path.isdir(non_existent_path)}")
 # 输出：'non_existent_folder' 是一个目录吗？ False (因为它不存在)
 
-# 4. 判断你的 Anno 1800 mods 文件夹
+# 4. 判断1800文件夹
 anno_mods_path = r'E:\SteamLibrary\steamapps\common\Anno 1800\mods'
 print(f"'{anno_mods_path}' 是一个目录吗？ {os.path.isdir(anno_mods_path)}")
