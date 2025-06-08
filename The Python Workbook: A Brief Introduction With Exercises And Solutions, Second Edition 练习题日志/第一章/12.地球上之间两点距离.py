@@ -4,29 +4,56 @@
 #创建一个程序，允许用户输入地球上两点的经度和纬度（以度为单位）。程序应该显示这两点在地球表面的距离，以千米为单位。
 import math
 
+
+
 def great_circle_distance(lat1, lon1, lat2, lon2):
-    R = 6371.01
-    return R * math.asin( math.sin(lat1) * math.sin(lat2) + math.cos(lat1) * math.cos(lat2) * math.cos(lon1 - lon2) )
+
+    R = 6371.01
+
+    return R * math.acos( math.sin(lat1) * math.sin(lat2) + math.cos(lat1) * math.cos(lat2) * math.cos(lon1 - lon2) )
+
+
 
 def deg_to_rad(deg):
-    return deg * math.pi / 180.0
+
+    return deg * math.pi / 180.0
+
+
 
 def main():
-    print("请输入第一个点的纬度和经度（单位：度）：")
-    lat1_deg = float(input("  纬度 t1: "))
-    lon1_deg = float(input("  经度 g1: "))
 
-    print("\n请输入第二个点的纬度和经度（单位：度）：")
-    lat2_deg = float(input("  纬度 t2: "))
-    lon2_deg = float(input("  经度 g2: "))
+    print("请输入第一个点的纬度和经度（单位：度）：")
 
-    # 转换为弧度
-    lat1 = deg_to_rad(lat1_deg)
-    lon1 = deg_to_rad(lon1_deg)
-    lat2 = deg_to_rad(lat2_deg)
-    lon2 = deg_to_rad(lon2_deg)
+    lat1_deg = float(input("  纬度 t1: "))
 
-    # 计算距离
-    distance = great_circle_distance(lat1, lon1, lat2, lon2)
+    lon1_deg = float(input("  经度 g1: "))
 
-    print(f"\n两点之间的球面距离为：{distance:.2f} 千米")
+
+
+    print("\n请输入第二个点的纬度和经度（单位：度）：")
+
+    lat2_deg = float(input("  纬度 t2: "))
+
+    lon2_deg = float(input("  经度 g2: "))
+
+
+
+    # 转换为弧度
+
+    lat1 = deg_to_rad(lat1_deg)
+
+    lon1 = deg_to_rad(lon1_deg)
+
+    lat2 = deg_to_rad(lat2_deg)
+
+    lon2 = deg_to_rad(lon2_deg)
+
+
+
+    # 计算距离
+
+    distance = great_circle_distance(lat1, lon1, lat2, lon2)
+
+# 当脚本直接运行时，执行 main 函数
+if __name__ == "__main__":
+    main()
