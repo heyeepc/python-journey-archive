@@ -3,10 +3,11 @@
 import math
 
 s_str = input("边长 (s)：")
-s= float(s_str)
+s = float(s_str)
 
 n_str = input("边的个数 (n)：")
-n = float(n_str)
+n = int(n_str)
 
-area = (n * s ** 2) / (4 * (math.pi / n))
-print(f"面积:{area:.2f}")
+# 使用正确的正多边形面积公式
+area = (n * s ** 2) / (4 * math.tan(math.pi / n))
+print(f"面积: {area:.2f}")
