@@ -8,5 +8,5 @@ s= float(s_str)
 n_str = input("边的个数 (n)：")
 n = float(n_str)
 
-area = (n * s ** 3) / (4 * (math.pi / n))
+area = (n * s ** 2) / (4 * (math.pi / n))
 print(f"面积:{area:.2f}")
