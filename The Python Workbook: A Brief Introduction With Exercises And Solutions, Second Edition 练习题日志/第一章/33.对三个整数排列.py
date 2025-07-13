@@ -4,8 +4,8 @@ num1 = int(input("请输入第一个整数: "))
 num2 = int(input("请输入第二个整数: "))
 num3 = int(input("请输入第三个整数: "))
 
- min_val = min(num1, num2, num3)
- max_val = max(num1, num2, num3)
+min_val = min(num1, num2, num3)
+max_val = max(num1, num2, num3)
 
 total_sum = num1 + num2 + num3
 middle_val = total_sum - min_val - max_val
