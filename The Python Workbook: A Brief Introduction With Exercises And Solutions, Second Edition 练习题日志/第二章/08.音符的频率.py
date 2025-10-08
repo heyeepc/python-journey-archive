@@ -2,3 +2,42 @@
 #虽然这可以通过在if 语句中添加许多额外的情况来实现，但是这样的解决方案非常麻烦、不优雅，对于本练习的目的来说是不可接受的。相反，应该利用相邻八度音阶之间的关系。
 #在八度音阶中，任何一个音符的频率都是后一个八度音阶对应音符的一半。
 #通过使用这个关系，应该能够添加对附加音符的支持，而不必向if语句添加额外的情况。
+# C4音阶的基准频率 (练习假设 C4 为中心，八度音阶为 4)
+Note_Frequency = {
+    "c": 261.63,
+    "d": 293.66,
+    "e": 329.63,
+    "f": 349.23,
+    "g": 392.00,
+    "a": 440.00,
+    "b": 493.88,
+}
+
+# 假设用户输入 "C4"
+Note_Input = input("请输入音符和八度音阶（如 c4, C8, C0）：").lower()
+
+# 确保输入至少有两个字符，并且第二个字符是数字
+if len(Note_Input) < 2 or not Note_Input[1].isdigit():
+    print("输入格式不正确。请确保您输入了音符（如 c）和八度音阶（如 4）。")
+else:
+    # 提取音符部分（第一个字符）
+    Note = Note_Input[0]
+    
+    # 提取八度音阶部分（从第二个字符开始的数字）
+    try:
+        
+        x = int(Note_Input[1:]) 
+    except ValueError:
+        print("八度音阶必须是有效的数字。")
+        # 退出或重新输入
+        exit()
+
+    if Note in Note_Frequency:
+        # 1. 获取音符的基准频率（C4, D4, E4, ...）
+        base_frequency = Note_Frequency[Note]
+        
+        Note_Conversion = base_frequency / (2 ** (4 - x))
+        
+        print(f"{Note.upper()}{x} 的频率是 {Note_Conversion:.2f} Hz。")
+    else:
+        print("输入的音符部分不正确。请检查音符是否为 C, D, E, F, G, A, B 中的一个。")
