@@ -10,7 +10,7 @@ if (a + b <= c) or (a + c <= b) or (b + c <= a):
 
 else:
     if a == b == c:
-        print("是边三角形")
+        print("是等边三角形")
     elif a == c or a == b or b == c:
         print("是等腰三角形")
     else:
