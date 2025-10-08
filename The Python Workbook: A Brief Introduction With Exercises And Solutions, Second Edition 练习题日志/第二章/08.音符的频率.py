@@ -22,22 +22,29 @@ if len(Note_Input) < 2 or not Note_Input[1].isdigit():
 else:
     # 提取音符部分（第一个字符）
     Note = Note_Input[0]
-    
+
     # 提取八度音阶部分（从第二个字符开始的数字）
     try:
-        
-        x = int(Note_Input[1:]) 
+        # 注意：这里我们假设八度音阶是单个数字，如果你要支持 C10 这种，需要稍微修改
+        x = int(Note_Input[1:])
     except ValueError:
         print("八度音阶必须是有效的数字。")
         # 退出或重新输入
         exit()
 
+    # --- 优雅地处理所有音符和八度音阶的核心逻辑 ---
     if Note in Note_Frequency:
         # 1. 获取音符的基准频率（C4, D4, E4, ...）
         base_frequency = Note_Frequency[Note]
-        
+
+        # 2. 计算目标八度音阶的频率。
+        # 规则：任何音符的频率都是前一个八度音阶对应音符的两倍。
+        # C4 是基准，八度音阶 4。
+        # x = 5 (C5) 时， 4 - 5 = -1。 2 ** (-1) = 0.5。 base / 0.5 = base * 2 (正确)
+        # x = 3 (C3) 时， 4 - 3 = 1。  2 ** (1) = 2。   base / 2 (正确)
+
         Note_Conversion = base_frequency / (2 ** (4 - x))
-        
+
         print(f"{Note.upper()}{x} 的频率是 {Note_Conversion:.2f} Hz。")
     else:
         print("输入的音符部分不正确。请检查音符是否为 C, D, E, F, G, A, B 中的一个。")
