@@ -11,3 +11,33 @@ Pay Black Pay Odd Pay 1 to 18
 
 # 如果仿真结果是0或00，那么程序应该显示Pay0或 Pay 00，没有任何进一步的输出。
 
+import random
+
+wheel = [0, "00"] + list(range(1, 37))
+random_digit = random.choice(wheel)
+
+print(f"The spin resulted in {random_digit}...")
+print("Pay")
+
+if random_digit in [0, "00"]:
+    print(f"Pay {random_digit}")
+else:
+    red_numbers = {1, 3, 5, 7, 9, 12, 14, 16, 18,
+                   19, 21, 23, 25, 27, 30, 32, 34, 36}
+
+    print(f"Pay {random_digit}")
+
+    if random_digit in red_numbers:
+        print("Pay Red")
+    else:
+        print("Pay Black")
+
+    if random_digit % 2 == 0:
+        print("Pay Even")
+    else:
+        print("Pay Odd")
+
+    if 1 <= random_digit <= 18:
+        print("Pay 1 to 18")
+    else:
+        print("Pay 19 to 36")
