@@ -15,3 +15,10 @@ for value in gen:
     print("得到：", value)
 
 #yield 会让函数“暂停”，只有当循环取下一个值时，才继续计算。
+
+
+a = [4.95,9.95,14.95,24.95]
+
+z = map(lambda x:x * 0.6,a)
+
+print(list(z))
